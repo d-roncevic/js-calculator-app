@@ -72,6 +72,30 @@ button:active {
   transform: scale(0.95);
 }
 
+button[onclick*="setOperator"] {
+  background: #ff9500;
+}
+
+button[onclick*="setOperator"]:hover {
+  background: #ffaa33;
+}
+
+button[onclick="calculate()"] {
+  background: #28a745;
+}
+
+button[onclick="calculate()"]:hover {
+  background: #3ddc65;
+}
+
+button[onclick="clearDisplay()"] {
+  background: #dc3545;
+}
+
+button[onclick="clearDisplay()"]:hover {
+  background: #ff4d5e;
+}
+
 .backspace {
   background: #6c757d;
 }
