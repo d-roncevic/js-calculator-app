@@ -40,4 +40,5 @@ A simple browser-based calculator built with HTML, CSS, and JavaScript. Supports
 ## Authors
 
 **Dev Squad Alpha** — Darian Rončević, Artion Laska, Elly James Komunga
+
 *Developed for Mayerfeld Consulting.*
