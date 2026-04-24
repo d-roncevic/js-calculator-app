@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;500&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,14 +11,22 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #1e1e2f;
-  font-family: Arial, sans-serif;
+  background: #111118;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(80, 60, 140, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(40, 80, 160, 0.1) 0%, transparent 50%);
+  font-family: 'Roboto', sans-serif;
   color: white;
 }
 
 header {
   text-align: center;
-  padding: 20px;
+  padding: 24px 20px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.35;
 }
 
 main {
@@ -27,24 +37,31 @@ main {
 }
 
 #calculator {
-  background: #2c2c3e;
-  padding: 20px;
-  border-radius: 15px;
-  width: 280px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: #1c1c28;
+  padding: 24px;
+  border-radius: 20px;
+  width: 340px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 #display {
   width: 100%;
-  height: 60px;
-  margin-bottom: 15px;
+  height: 76px;
+  margin-bottom: 18px;
   border: none;
-  border-radius: 10px;
-  background: #111;
-  color: #0f0;
-  font-size: 2rem;
+  border-radius: 12px;
+  background: #0d0d14;
+  color: #e8ffe8;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2.2rem;
   text-align: right;
-  padding: 10px;
+  padding: 10px 16px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.04);
+  caret-color: transparent;
+  letter-spacing: 0.02em;
 }
 
 #keys {
@@ -54,54 +71,70 @@ main {
 }
 
 button {
-  padding: 15px;
+  padding: 18px;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.2rem;
   border: none;
-  border-radius: 10px;
-  background: #3b3b55;
-  color: white;
+  border-radius: 12px;
+  background: #262636;
+  color: rgba(255, 255, 255, 0.85);
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: background 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.04);
+  position: relative;
 }
 
 button:hover {
-  background: #50507a;
+  background: #31314a;
+  color: #fff;
 }
 
 button:active {
-  transform: scale(0.95);
+  transform: scale(0.94);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 button[onclick*="setOperator"] {
-  background: #ff9500;
+  background: #7c4dff;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(124, 77, 255, 0.35), 0 0 0 1px rgba(255,255,255,0.06);
 }
 
 button[onclick*="setOperator"]:hover {
-  background: #ffaa33;
+  background: #9166ff;
+  box-shadow: 0 4px 12px rgba(124, 77, 255, 0.45);
 }
 
 button[onclick="calculate()"] {
-  background: #28a745;
+  background: #00c06b;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 192, 107, 0.3), 0 0 0 1px rgba(255,255,255,0.06);
 }
 
 button[onclick="calculate()"]:hover {
-  background: #3ddc65;
+  background: #00d97a;
+  box-shadow: 0 4px 12px rgba(0, 192, 107, 0.45);
 }
 
 button[onclick="clearDisplay()"] {
-  background: #dc3545;
+  background: #e03e52;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(224, 62, 82, 0.3), 0 0 0 1px rgba(255,255,255,0.06);
 }
 
 button[onclick="clearDisplay()"]:hover {
-  background: #ff4d5e;
+  background: #f05060;
+  box-shadow: 0 4px 12px rgba(224, 62, 82, 0.45);
 }
 
 .backspace {
-  background: #6c757d;
+  background: #2e2e42;
+  color: rgba(255,255,255,0.7);
 }
 
 .backspace:hover {
-  background: #868e96;
+  background: #3a3a52;
+  color: #fff;
 }
 
 #keys button:nth-child(1),
@@ -111,43 +144,63 @@ button[onclick="clearDisplay()"]:hover {
 
 footer {
   text-align: center;
-  padding: 10px;
-  font-size: 0.9rem;
-  opacity: 0.6;
+  padding: 14px;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  opacity: 0.25;
 }
 
 .shake {
   animation: shake 0.3s ease;
 }
 
-@media (max-width: 400px) {
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-7px); }
+  40%  { transform: translateX(7px); }
+  60%  { transform: translateX(-5px); }
+  80%  { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 500px) {
   #calculator {
-    width: 90%;
+    width: 90vw;
+    padding: 20px;
+  }
+
+  #display {
+    font-size: 1.9rem;
+    height: 68px;
+  }
+
+  button {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+
+  #keys {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  #calculator {
+    width: 95vw;
+    padding: 14px;
+  }
+
+  #display {
+    font-size: 1.6rem;
+    height: 60px;
   }
 
   button {
     padding: 12px;
     font-size: 1rem;
   }
-}
 
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-8px);
-  }
-  40% {
-    transform: translateX(8px);
-  }
-  60% {
-    transform: translateX(-6px);
-  }
-  80% {
-    transform: translateX(6px);
-  }
-  100% {
-    transform: translateX(0);
+  #keys {
+    gap: 6px;
   }
 }
