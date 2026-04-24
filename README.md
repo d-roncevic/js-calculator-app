@@ -2,6 +2,30 @@
 
 A simple browser-based calculator built with HTML, CSS, and JavaScript. Supports basic math operations, decimal input, chained calculations, backspace, and full keyboard support.
 
+🔗 **[Live Demo](https://your-username.github.io/your-repo-name)**
+
+## Features
+
+- Basic math operators: `+`, `-`, `*`, `/`
+- Chained operations evaluated step by step
+- Decimal input with duplicate dot prevention
+- Backspace to undo the last digit
+- Clear button to reset everything
+- Snarky error message on divide by zero
+- Full keyboard support
+- Responsive design for all screen sizes
+
+## Keyboard Shortcuts
+
+| Action | Keyboard |
+|---|---|
+| Input a number | `0–9` |
+| Choose an operator | `+` `-` `*` `/` |
+| Calculate result | `Enter` or `=` |
+| Decimal point | `.` or `,` |
+| Backspace | `Backspace` |
+| Clear display | `C` |
+
 ## How to Run
 
 - Clone the repository
