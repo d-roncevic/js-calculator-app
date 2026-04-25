@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto:wght@400;500&display=swap");
 
 * {
   box-sizing: border-box;
@@ -13,9 +13,17 @@ body {
   justify-content: space-between;
   background: #111118;
   background-image:
-    radial-gradient(ellipse at 20% 50%, rgba(80, 60, 140, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(40, 80, 160, 0.1) 0%, transparent 50%);
-  font-family: 'Roboto', sans-serif;
+    radial-gradient(
+      ellipse at 20% 50%,
+      rgba(80, 60, 140, 0.15) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(40, 80, 160, 0.1) 0%,
+      transparent 50%
+    );
+  font-family: "Roboto", sans-serif;
   color: white;
 }
 
@@ -55,11 +63,13 @@ main {
   border-radius: 12px;
   background: #0d0d14;
   color: #e8ffe8;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 2.2rem;
   text-align: right;
   padding: 10px 16px;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.04);
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
   caret-color: transparent;
   letter-spacing: 0.02em;
 }
@@ -72,15 +82,20 @@ main {
 
 button {
   padding: 18px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 1.2rem;
   border: none;
   border-radius: 12px;
   background: #262636;
   color: rgba(255, 255, 255, 0.85);
   cursor: pointer;
-  transition: background 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.04);
+  transition:
+    background 0.1s ease,
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
   position: relative;
 }
 
@@ -91,13 +106,15 @@ button:hover {
 
 button:active {
   transform: scale(0.94);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 button[onclick*="setOperator"] {
   background: #7c4dff;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(124, 77, 255, 0.35), 0 0 0 1px rgba(255,255,255,0.06);
+  box-shadow:
+    0 2px 8px rgba(124, 77, 255, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 button[onclick*="setOperator"]:hover {
@@ -108,7 +125,9 @@ button[onclick*="setOperator"]:hover {
 button[onclick="calculate()"] {
   background: #00c06b;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 192, 107, 0.3), 0 0 0 1px rgba(255,255,255,0.06);
+  box-shadow:
+    0 2px 8px rgba(0, 192, 107, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 button[onclick="calculate()"]:hover {
@@ -119,7 +138,9 @@ button[onclick="calculate()"]:hover {
 button[onclick="clearDisplay()"] {
   background: #e03e52;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(224, 62, 82, 0.3), 0 0 0 1px rgba(255,255,255,0.06);
+  box-shadow:
+    0 2px 8px rgba(224, 62, 82, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 button[onclick="clearDisplay()"]:hover {
@@ -129,7 +150,7 @@ button[onclick="clearDisplay()"]:hover {
 
 .backspace {
   background: #2e2e42;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .backspace:hover {
@@ -137,10 +158,10 @@ button[onclick="clearDisplay()"]:hover {
   color: #fff;
 }
 
-#keys button:nth-child(1),
+/* #keys button:nth-child(1),
 #keys button:nth-child(2) {
   grid-column: span 2;
-}
+} */
 
 footer {
   text-align: center;
@@ -155,12 +176,24 @@ footer {
 }
 
 @keyframes shake {
-  0%   { transform: translateX(0); }
-  20%  { transform: translateX(-7px); }
-  40%  { transform: translateX(7px); }
-  60%  { transform: translateX(-5px); }
-  80%  { transform: translateX(5px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-7px);
+  }
+  40% {
+    transform: translateX(7px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  80% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 500px) {

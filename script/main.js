@@ -5,6 +5,7 @@ let displayValue = "0";
 let firstOperand = null;
 let operator = null;
 let shouldResetDisplay = false;
+let percentUsed = false;
 
 function add(a, b) {
   return a + b;
@@ -55,6 +56,7 @@ function appendNumber(number) {
   if (displayValue === "0" || shouldResetDisplay) {
     displayValue = number;
     shouldResetDisplay = false;
+    percentUsed = false;
   } else {
     displayValue += number;
   }
@@ -115,6 +117,41 @@ function calculate() {
   operator = null;
   firstOperand = null;
   shouldResetDisplay = true;
+
+  updateDisplay();
+}
+
+function toggleSign() {
+  if (displayValue === "0") return;
+
+  if (displayValue.startsWith("-")) {
+    displayValue = displayValue.slice(1);
+  } else {
+    displayValue = "-" + displayValue;
+  }
+
+  updateDisplay();
+}
+
+function percentage() {
+  if (percentUsed) return;
+
+  let current = Number(displayValue);
+
+  if (firstOperand !== null && operator !== null) {
+    let base = Number(firstOperand);
+
+    if (operator === "+" || operator === "-") {
+      current = base * (current / 100);
+    } else {
+      current = current / 100;
+    }
+  } else {
+    current = current / 100;
+  }
+
+  displayValue = current.toString();
+  percentUsed = true;
 
   updateDisplay();
 }
