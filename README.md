@@ -2,7 +2,7 @@
 
 A simple browser-based calculator built with HTML, CSS, and JavaScript. Supports basic math operations, decimal input, chained calculations, backspace, and full keyboard support.
 
-🔗 **[Live Demo](https://your-username.github.io/your-repo-name)**
+🔗 **[Live Demo](https://d-roncevic.github.io/js-calculator-app/)**
 
 ## Features
 
